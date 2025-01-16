@@ -11,7 +11,7 @@
     "install":"npm run install:todo && npm run install:server",
     
     "start": "concurrently \"npm run server\" \"wait-on tcp:3001 && npm run dev\"",
-    "start:dev":"concurrently \"npm run install \"npm run start"
+    "start:dev":"npm run install && npm run start"
     
 
   },
