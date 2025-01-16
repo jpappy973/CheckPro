@@ -1,0 +1,26 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd todolist && npm run dev",
+    "server": "cd server && npm run start",
+    "install:todo":"cd todolist && npm install",
+    "install:server":"cd server && npm install",
+    "install":"npm run install:todo && npm run install:server",
+    
+    "start": "concurrently \"npm run server\" \"wait-on tcp:3001 && npm run dev\"",
+    "start:dev":"npm run install && npm run start"
+    
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "wait-on": "^8.0.2"
+  }
+}
